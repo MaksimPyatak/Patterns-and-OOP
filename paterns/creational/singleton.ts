@@ -18,7 +18,7 @@ class FirstTabContent {
 
   private getTabContentData() {
     console.log('Запит для отримання даних для рендеренгу таба');
-    console.log('Дані для рендеренгу таба отимано\n');
+    console.log('Дані для рендеренгу таба отримано\n');
   }
 
   public renderTabContent() {

@@ -92,3 +92,37 @@ console.log('');
 
 console.log('Рендеринг сторінки Dota:');
 renderPage(new DotaPageRender());
+//
+//
+//
+//
+//
+//
+//
+
+/**
+ *
+ * @param timestamp -- може бути лише рядком
+ */
+function makeDate(timestamp: string): Date;
+/**
+ *
+ * @param m Heloo
+ * @param d Buy
+ * @param y
+ */
+function makeDate(m: number, d: number, y: number): Date;
+
+function makeDate(mOrTimestamp: number | string, d?: number, y?: number): Date {
+  if (d !== undefined && y !== undefined) {
+    if (typeof mOrTimestamp === 'number') {
+      return new Date(y, mOrTimestamp, d);
+    }
+    return new Date(Date.now());
+  } else {
+    return new Date(mOrTimestamp);
+  }
+}
+const d1 = makeDate('12345678');
+const d2 = makeDate(5, 5, 5);
+//const d3 = makeDate(1, 3);

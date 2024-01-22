@@ -4,14 +4,14 @@ interface Printer {
 }
 
 class BasePrinter implements Printer {
-  public text: string;
+  public text: string = '';
   public printing(text: string): string {
     return `${text}`;
   }
 }
 
 class Decorator implements Printer {
-  public text: string;
+  public text: string = '';
   protected printer: Printer;
   constructor(printer: Printer) {
     this.printer = printer;
@@ -33,6 +33,15 @@ class UpperCase extends Decorator {
   }
 }
 
+class ReverseText extends Decorator {
+  /**
+   * printing
+   */
+  public printing(text: string): string {
+    return super.printing(text).split('').reverse().join('');
+  }
+}
+
 function convertString(text: string, printer: Printer) {
   console.log(printer.printing(text));
 }
@@ -42,5 +51,11 @@ convertString(exampleText, simplePrinter);
 
 const lowerCase = new LowerCase(simplePrinter);
 convertString(exampleText, lowerCase);
+
 const upperCase = new UpperCase(simplePrinter);
 convertString(exampleText, upperCase);
+
+//Використання декількох декораторів
+const reverser = new ReverseText(simplePrinter);
+const upperTextAndReverse = new UpperCase(reverser);
+convertString(exampleText, upperTextAndReverse);

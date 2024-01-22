@@ -16,7 +16,7 @@ class SpeedCar {
   }
 }
 
-class SpeedAdapter {
+class SpeedAdapter implements ISpeed {
   private car: SpeedCar;
   //  private speed: number;
 

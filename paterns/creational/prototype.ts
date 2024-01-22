@@ -17,21 +17,21 @@ class CupPrototype implements IPrototype {
   }
 }
 function createCup() {
-  const Cup = new CupPrototype(150, 'yelow');
-  const bigCup = Cup.clone();
-  const smallCup = Cup.clone();
-  if (bigCup.volume == smallCup.volume) {
+  const cup = new CupPrototype(150, 'yelow');
+  const bigCup = cup.clone();
+  const smallCup = cup.clone();
+  if (cup.volume == smallCup.volume) {
     console.log(' Успіх!');
-    console.log(bigCup);
+    console.log(cup);
     console.log(smallCup);
   } else {
     console.log('Невдача(((');
-    console.log(bigCup);
+    console.log(cup);
     console.log(smallCup);
   }
 
-  bigCup.volume = 400;
-  console.log(bigCup);
+  cup.volume = 400;
+  console.log(cup);
   console.log(smallCup);
 }
 createCup();
