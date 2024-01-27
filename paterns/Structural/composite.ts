@@ -1,15 +1,10 @@
 abstract class Component {
   protected parent: Component | null = null;
 
-  /**
-   * setParent встановлює батька
-   */
   public setParent(parent: Component | null) {
     this.parent = parent;
   }
-  /**
-   * getParent повертає батька
-   */
+
   public getParent(): Component | null {
     return this.parent;
   }
@@ -18,9 +13,6 @@ abstract class Component {
 
   public remove(component: Component): void {}
 
-  /**
-   * Чи може компонент мати дітей.
-   */
   public isComposite(): boolean {
     return false;
   }
@@ -28,26 +20,18 @@ abstract class Component {
   public abstract operation(): string;
 }
 
-/**
- * Клас Table кінцевий об’єкт композиції
- */
 class Table extends Component {
   public operation(): string {
     return 'Table';
   }
 }
-/**
- * Клас Chair кінцевий об’єкт композиції
- */
+
 class Chair extends Component {
   public operation(): string {
     return 'Chair';
   }
 }
 
-/**
- * Room - компонент-контейнер
- */
 class Composite extends Component {
   protected children: Component[] = [];
 
@@ -66,9 +50,6 @@ class Composite extends Component {
     return true;
   }
 
-  /**
-   * operation рекурсивно проходить усіх своїх дітей, збираючи та підсумовуючи їхні результати.
-   */
   public operation(): string {
     const results: string[] = [];
     for (const child of this.children) {
