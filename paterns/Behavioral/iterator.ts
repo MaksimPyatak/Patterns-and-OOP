@@ -20,6 +20,7 @@ class InstitutionsListIterator implements IIterator<string> {
   public current(): string {
     return this.collection.getItems()[this.position];
   }
+
   public next(): string {
     const item = this.collection.getItems()[this.position];
     ++this.position;

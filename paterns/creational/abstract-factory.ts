@@ -23,9 +23,6 @@ class DotaPageRender implements IPageRender {
   }
 }
 
-/**
- * Product 1
- */
 interface IGameDataGetting {
   getData(): number[];
 }
@@ -46,9 +43,6 @@ class DotaDataGetting implements IGameDataGetting {
   }
 }
 
-/**
- * Product 2
- */
 interface IMatchesRenderer {
   renderHead(): void;
   renderMatches(gameDataGetting: IGameDataGetting): void;

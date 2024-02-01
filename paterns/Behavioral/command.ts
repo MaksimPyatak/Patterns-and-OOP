@@ -1,6 +1,3 @@
-/**
- * Receiver -- отримувач команд
- */
 class Receiver {
   public copy(): void {
     console.log(`Я зкопіював виділений об'єкт.`);

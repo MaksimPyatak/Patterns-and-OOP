@@ -1,5 +1,5 @@
 class Header {
-  private observer: HeaderObserver | null = null;
+  private observer: HeaderObserver;
 
   constructor(headerObserver: HeaderObserver) {
     this.observer = headerObserver;
@@ -11,12 +11,12 @@ class Header {
 
   changeGame(game: string): void {
     console.log(`Вибрано ${game}`);
-    this.observer?.notify('game', game);
+    this.observer.notify('game', game);
   }
 
   openMessage(messageId: string): void {
     console.log(`Вибрано повідомлення з id: ${messageId}`);
-    this.observer?.notify('message', messageId);
+    this.observer.notify('message', messageId);
   }
 }
 
